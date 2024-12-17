@@ -1,0 +1,34 @@
+
+package bankmanagementsystem;
+
+import java.sql.*;
+public class connection {
+    
+    Connection c;
+    Statement s;
+    
+    public connection()
+    {
+        try {
+           // Class.forName(com.mysql.cj.jdbc.Driver);
+            
+            c=DriverManager.getConnection("jdbc:mysql:///bms","root","nilesh321");
+            s=c.createStatement();
+            
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+            
+            
+        }
+        
+    }
+    
+    public static void main(String args[])
+    {
+        connection c=new connection();
+        
+    }
+    
+}
